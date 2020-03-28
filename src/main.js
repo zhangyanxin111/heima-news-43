@@ -5,8 +5,11 @@ import App from "./App.vue";
 //路由对象
 import router from "./router";
 
+import Vant from "vant";
+Vue.use(Vant);
 Vue.config.productionTip = false;
-//创建一个根目录
+
+//创建一个根目录;
 new Vue({
   router,
   render: h => h(App)
