@@ -1,7 +1,5 @@
 import Vue from "vue";
-//导入路由
 import VueRouter from "vue-router";
-//注册路由的插件，把路由关系到
 Vue.use(VueRouter);
 //路由配置
 const routes = [
@@ -12,9 +10,19 @@ const routes = [
     component: () => import("@/views/Login")
   },
   {
-    //注册也
+    //注册页
     path: "/rgister",
+    component: () => import("@/views/Register")
+  },
+  {
+    //个人中心页
+    path: "/personal",
     component: () => import("@/views/Personal")
+  },
+  {
+    //编辑页
+    path: "/edit-profile",
+    component: () => import("@/views/EditProfile")
   }
 ];
 
