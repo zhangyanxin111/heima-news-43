@@ -12,17 +12,29 @@ const routes = [
   {
     //注册页
     path: "/rgister",
-    component: () => import("@/views/Register")
+    component: () => import("@/views/Register"),
+    meta: {
+      //代表这个页面授权
+      authorization: true
+    }
   },
   {
     //个人中心页
     path: "/personal",
-    component: () => import("@/views/Personal")
+    component: () => import("@/views/Personal"),
+    meta: {
+      //代表这个页面授权
+      authorization: true
+    }
   },
   {
     //编辑页
     path: "/edit-profile",
-    component: () => import("@/views/EditProfile")
+    component: () => import("@/views/EditProfile"),
+    meta: {
+      //代表这个页面授权
+      authorization: true
+    }
   }
 ];
 

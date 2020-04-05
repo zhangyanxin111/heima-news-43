@@ -7,17 +7,8 @@
       <van-uploader class="uploader" :after-read="afterRead" />
     </div>
     <!-- 按钮列表 -->
-    <Listbar
-      label="昵称"
-      :tips="userInfo.nickname"
-      @click.native="show = true"
-    />
-    <van-dialog
-      v-model="show"
-      title="修改昵称"
-      show-cancel-button
-      @confirm="handleChangeNickname"
-    >
+    <Listbar label="昵称" :tips="userInfo.nickname" @click.native="show = true" />
+    <van-dialog v-model="show" title="修改昵称" show-cancel-button @confirm="handleChangeNickname">
       <van-field v-model="nickname" placeholder="请输入用户名" />
     </van-dialog>
 
@@ -32,11 +23,7 @@
       <van-field v-model="password" placeholder="请输入密码" type="password" />
     </van-dialog>
 
-    <Listbar
-      label="性别"
-      :tips="['女', '男'][userInfo.gender]"
-      @click.native="showGender = true"
-    />
+    <Listbar label="性别" :tips="['女', '男'][userInfo.gender]" @click.native="showGender = true" />
     <van-action-sheet
       v-model="showGender"
       close-on-click-action
@@ -69,7 +56,7 @@ export default {
     NavigateBar,
     Listbar
   },
-  mounred() {
+  mounted() {
     const userJson = JSON.parse(localStorage.getItem("userInfo"));
     this.userJson = userJson;
     this.$axios({
